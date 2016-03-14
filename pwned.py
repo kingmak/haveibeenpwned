@@ -9,10 +9,10 @@ try:
 except Exception:
     sys.exit('You were not pwned. You are safe :)')
 
-parsed = json.loads(data)
+pwns = json.loads(data)
 print 'you were pwned at the following breaches:\n'
 
 count = 1
-for pwns in parsed:
-    print '%2d) %-30s %s' %(count, pwns['Name'], pwns['Domain'])
+for pwn in pwns:
+    print '%2d) %-40s %s' %(count, pwn['Name'], pwn['Domain'])
     count += 1
